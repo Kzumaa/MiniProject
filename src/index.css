@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Simple CSS variables to tweak layout quickly */
+:root {
+  --container-w: 1200px;
+}
+.container-narrow {
+  max-width: var(--container-w);
+}

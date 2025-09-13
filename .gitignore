@@ -1,0 +1,14 @@
+# Node
+node_modules/
+dist/
+.vite/
+*.log
+
+# Env
+.env
+.env.*.local
+
+# Editor/OS
+.DS_Store
+.vscode/
+.idea/
