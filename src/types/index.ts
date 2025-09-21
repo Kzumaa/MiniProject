@@ -1,50 +1,58 @@
-export type ID = string | number
+export type Role = 'ADMIN' | 'MENTEE' | 'MENTOR';
 
-export type Role = 'admin' | 'mentor' | 'mentee'
-
-export type PaginatedQuery = {
-  page?: number
-  pageSize?: number
-  search?: string
-  sortBy?: string
-  sortDir?: 'asc' | 'desc'
+export interface User {
+  id: number;
+  role: Role;
+  fullName: string;
+  username: string;
+  email: string;
+  description?: string;
+  createdAt: string;
+  updatedAt: string;
+  token?: string; // FE only
 }
 
-export type PaginatedRes<T> = {
-  data: T[]
-  page: number
-  pageSize: number
-  total: number
+export interface Subject {
+  id: number;
+  name: string;
+  description?: string;
+  createdAt: string;
+  updatedAt: string;
+  mentorIds?: number[];
 }
 
-export type RequestOption = {
-  params?: Record<string, any>
-  headers?: Record<string, string>
-  signal?: AbortSignal
+export interface Mentor {
+  id: number;
+  fullName: string;
+  email: string;
+  bio?: string;
+  subjectIds?: number[];
+  createdAt: string;
+  updatedAt: string;
 }
 
-export type User = {
-  id: ID
-  name: string
-  email: string
-  role: Role
-  createdAt?: string
-  updatedAt?: string
+export interface Registration {
+  id: number;
+  menteeId: number;
+  mentorId?: number;
+  subjectId?: number;
+  createdAt: string;
 }
 
-export type AuthUser = {
-  id: ID
-  name: string
-  email: string
-  role: Role
+export interface ApiPagination {
+  page: number;
+  limit: number;
+  total: number;
 }
 
-export type LoginInput = {
-  email: string
-  password: string
+export interface ApiList<T> {
+  pagination: ApiPagination;
+  items: T[];
 }
 
-export type AuthResponse = {
-  token: string
-  user: AuthUser
+export interface ApiResponse<T> {
+  success: boolean;
+  message: string;
+  data?: T;
+  errorCode?: number;
 }
