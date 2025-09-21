@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import AppLayout from "@/layout/AppLayout";
-// import LoginPage from "@/pages/auth/LoginPage";
+import LoginPage from "@/pages/auth/LoginPage";
+import ComponentTestPage from "@/pages/ComponentTestPage";
 import ProtectedRoute from "./ProtectedRoute";
 
 // import SubjectsPage from "@/pages/admin/SubjectsPage";
@@ -19,7 +20,13 @@ import ProtectedRoute from "./ProtectedRoute";
 // import MentorMyRegistrations from "@/pages/mentor/MyRegistrationsPage";
 
 export const router = createBrowserRouter([
-  // { path: "/login", element: <LoginPage /> },
+  { path: "/login", element: <LoginPage /> },
+
+  // Public route for testing components (no login required)
+  {
+    path: "/test",
+    element: <ComponentTestPage />,
+  },
 
   {
     element: <ProtectedRoute />, // any logged-in user
@@ -28,7 +35,7 @@ export const router = createBrowserRouter([
         path: "/",
         element: <AppLayout />,
         children: [
-          { index: true, element: <Navigate to="/registrations" replace /> },
+          { index: true, element: <Navigate to="/test" replace /> },
 
           // Shared
           // { path: "registrations", element: <MyRegistrationsPage /> },
