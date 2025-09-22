@@ -2,6 +2,7 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 import AppLayout from "@/layout/AppLayout";
 // import LoginPage from "@/pages/auth/LoginPage";
 import ProtectedRoute from "./ProtectedRoute";
+import PopupFormDemo from "@/pages/dev/PopupFormDemo";
 
 // import SubjectsPage from "@/pages/admin/SubjectsPage";
 // import SubjectForm from "@/pages/admin/SubjectForm";
@@ -20,6 +21,7 @@ import ProtectedRoute from "./ProtectedRoute";
 
 export const router = createBrowserRouter([
   // { path: "/login", element: <LoginPage /> },
+  { path: "/_dev/popup-demo", element: <PopupFormDemo /> },
 
   {
     element: <ProtectedRoute />, // any logged-in user
