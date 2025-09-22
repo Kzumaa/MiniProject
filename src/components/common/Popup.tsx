@@ -130,7 +130,18 @@ export default function Popup({
         </DialogTitle>
       )}
 
-      <DialogContent {...contentProps}>{children}</DialogContent>
+      <DialogContent
+        sx={{
+          // Override MUI's default style that sets padding-top to 0
+          ".MuiDialogTitle-root + &": {
+            paddingTop: 2,
+          },
+          ...(contentProps?.sx || {}),
+        }}
+        {...contentProps}
+      >
+        {children}
+      </DialogContent>
 
       {actions && <DialogActions {...actionsProps}>{actions}</DialogActions>}
     </Dialog>
