@@ -2,6 +2,7 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 import AppLayout from "@/layout/AppLayout";
 // import LoginPage from "@/pages/auth/LoginPage";
 import ProtectedRoute from "./ProtectedRoute";
+import UserManagementPage from "@/pages/admin/UserManagementPage";
 
 // import SubjectsPage from "@/pages/admin/SubjectsPage";
 // import SubjectForm from "@/pages/admin/SubjectForm";
@@ -22,22 +23,22 @@ export const router = createBrowserRouter([
   // { path: "/login", element: <LoginPage /> },
 
   {
-    element: <ProtectedRoute />, // any logged-in user
+    // element: <ProtectedRoute />, // any logged-in user
     children: [
       {
         path: "/",
         element: <AppLayout />,
         children: [
-          { index: true, element: <Navigate to="/registrations" replace /> },
+          { index: true, element: <Navigate to="/admin/users" replace /> },
 
           // Shared
           // { path: "registrations", element: <MyRegistrationsPage /> },
 
           // Admin only
           {
-            element: <ProtectedRoute roles={["ADMIN"]} />,
+            // element: <ProtectedRoute roles={["ADMIN"]} />,
             children: [
-              //   { path: "admin/subjects", element: <SubjectsPage /> },
+              { path: "admin/users", element: <UserManagementPage /> },
               //   { path: "admin/subjects/new", element: <SubjectForm /> },
               //   { path: "admin/subjects/:id", element: <SubjectForm /> },
               //   { path: "admin/mentors", element: <MentorsPage /> },

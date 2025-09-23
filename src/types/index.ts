@@ -56,3 +56,12 @@ export interface ApiResponse<T> {
   data?: T;
   errorCode?: number;
 }
+
+
+export interface ListRequestParams<T> {
+  page?: number;
+  pageSize?: number;
+  search?: string;
+  sort?: 'asc' | 'desc';
+  name?: keyof T;
+}
