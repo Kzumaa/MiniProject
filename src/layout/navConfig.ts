@@ -8,7 +8,7 @@ export const navByRole: Record<Role, NavItem[]> = {
     { label: 'Subjects', to: '/admin/subjects' },
     { label: 'Mentors', to: '/admin/mentors' },
     { label: 'Assign', to: '/admin/assign' },
-    { label: 'Registrations', to: '/registrations' },
+    { label: 'Registrations', to: '/admin/registrations' },
   ],
   MENTEE: [
     { label: 'Mentors', to: '/mentee/mentors' },
