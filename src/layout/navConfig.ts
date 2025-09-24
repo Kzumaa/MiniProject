@@ -4,6 +4,7 @@ type NavItem = { label: string; to: string; icon?: React.ReactNode };
 
 export const navByRole: Record<Role, NavItem[]> = {
   ADMIN: [
+    { label: 'Users', to: '/admin/users' },
     { label: 'Subjects', to: '/admin/subjects' },
     { label: 'Mentors', to: '/admin/mentors' },
     { label: 'Assign', to: '/admin/assign' },

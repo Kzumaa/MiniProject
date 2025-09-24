@@ -3,6 +3,7 @@ import AppLayout from "@/layout/AppLayout";
 // import LoginPage from "@/pages/auth/LoginPage";
 import ProtectedRoute from "./ProtectedRoute";
 import UserManagementPage from "@/pages/admin/UserManagementPage";
+import MentorListPage from "@/pages/mentee/MentorListPage";
 
 // import SubjectsPage from "@/pages/admin/SubjectsPage";
 // import SubjectForm from "@/pages/admin/SubjectForm";
@@ -52,7 +53,7 @@ export const router = createBrowserRouter([
           {
             element: <ProtectedRoute roles={["MENTEE"]} />,
             children: [
-              // { path: "mentee/mentors", element: <MentorListPage /> },
+              { path: "mentee/mentors", element: <MentorListPage /> },
               // { path: "mentee/subjects", element: <SubjectListPage /> },
               // {
               //   path: "mentee/register/mentor/:id",
